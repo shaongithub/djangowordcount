@@ -11,6 +11,11 @@ def about(request):
 def count(request):
     fulltext = request.GET['fulltext']
 
+    letterCount = 0
+    for i in fulltext:
+        if i != ' ':
+            letterCount += 1
+    
     wordlist = fulltext.split()
 
-    return render(request, 'count.html', {'fulltext':fulltext,'count':len(wordlist)})
+    return render(request, 'count.html', {'fulltext':fulltext,'count':len(wordlist), 'letterCount': letterCount})
