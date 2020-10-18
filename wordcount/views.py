@@ -3,12 +3,21 @@ from django.shortcuts import render
 from . import views
 
 def home(request):
+    '''
+    home page
+    '''
     return render(request, 'home.html')
 
 def about(request):
+    '''
+    about page
+    '''
     return render(request, 'about.html')
 
 def count(request):
+    '''
+    count page
+    '''
     fulltext = request.GET['fulltext']
 
     letterCount = 0
